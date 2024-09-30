@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+*{
+  font-family:'Times New Roman', Times, serif;
+}
+.task-item {
+  overflow: hidden; /* Hides any content that overflows the container */
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+  text-overflow: ellipsis; /* Adds an ellipsis (...) at the end of the text if it's too long */
+}
+
+
+.dragging {
+    z-index: 1000;
+    opacity: 1;
+    transform: scale(0);
+    transition: transform 0.2s, opacity 0.2s;
+  } 
+  
+
+  .scrollable-no-scrollbar::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers */
+  }
+  
+  .scrollable-no-scrollbar {
+    -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+  }
+  
+  /* .dragging {
+    z-index: 1000;
+    opacity: 0.5;
+  }  */
+
+/*   
+  .dropping {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+  } */
+
+
+  

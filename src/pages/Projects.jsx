@@ -115,7 +115,10 @@ const Projects = () => {
 
       <TabContext value={selectedTab}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <TabList onChange={handleTabChange} aria-label="project tabs">
+          <TabList
+            onChange={handleTabChange}
+            aria-label="project tabs"
+          >
             <Tab label={`Your Projects (${projects.length})`} value="1" />
             <Tab
               label={`Favorite Projects (${favoriteProjects.length})`}

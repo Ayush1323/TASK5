@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
-import AutoAwesomeMotionIcon from '@mui/icons-material/AutoAwesomeMotion';
-import {  FaBars } from "react-icons/fa"; // Add icons from react-icons
+import React, { useState } from "react";
+import { FaBars } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const CustomSidebar = () => {
+export const CustomSidebar = () => {
   const [open, setOpen] = useState(true);
 
   const Menus = [
@@ -14,9 +13,7 @@ const CustomSidebar = () => {
   return (
     <div className="flex text-black justify-center items-center ">
       <div
-        className={`${
-          open ? "w-60" : "w-20"
-        } bg-[#F7FAFF] h-screen p-5 pt-6 relative duration-300 `}
+        className={`${open ? "w-60" : "w-20"} bg-[#F7FAFF] h-screen p-5 pt-6 relative duration-300 `}
       >
         <div
           className={`absolute cursor-pointer -right-7 top-4 w-10 h-10 text-[24px]  rounded-full flex  justify-center  font-bold transition-transform  
@@ -26,11 +23,9 @@ const CustomSidebar = () => {
           <FaBars />
         </div>
         <div className="flex items-center gap-x-4">
-          <AutoAwesomeMotionIcon />
+          {/* <AutoAwesomeMotionIcon /> */}
           <h1
-            className={` font-semibold text-2xl duration-200 ${
-              !open && "hidden"
-            }
+            className={` font-semibold text-2xl duration-200 ${!open && "hidden"}
             }`}
           >
             Tasks
@@ -41,7 +36,7 @@ const CustomSidebar = () => {
             <Link
               to="/"
               key={index}
-              className={`flex items-center p-2 mt-2  hover:bg-white rounded-lg transition-colors duration-300 `}
+              className={`flex items-center  p-2 mt-2  hover:bg-white rounded-lg transition-colors duration-300 ${open ? "pl-4" : ""}`}
             >
               <div className="text-xl flex justify-center items-center">{menu.icon}</div>
               <span className={`ml-2 font-medium ${!open && "hidden"}`}>
@@ -54,5 +49,3 @@ const CustomSidebar = () => {
     </div>
   );
 };
-
-export default CustomSidebar;
